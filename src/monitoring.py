@@ -1,5 +1,3 @@
-"""WORK IN PROGRESS — Adding methods and implementation details."""
-
 """Model monitoring."""
 import logging
 import time
@@ -31,3 +29,19 @@ class PerformanceMonitor:
     """Monitor model performance over time."""
 
     def __init__(self) -> None:
+        self._history: List[Dict] = []
+
+    def log(self, metric_name: str, value: float, timestamp: str = None) -> None:
+        self._history.append({"metric": metric_name, "value": value,
+            "timestamp": timestamp or time.strftime("%Y-%m-%d %H:%M:%S")})
+
+    def get_trend(self, metric_name: str, n_last: int = 10) -> List[Dict]:
+        entries = [h for h in self._history if h["metric"] == metric_name]
+        return entries[-n_last:]
+
+    def is_degrading(self, metric_name: str, window: int = 5, threshold: float = -0.05) -> bool:
+        trend = self.get_trend(metric_name, window + 1)
+        if len(trend) < 2: return False
+        values = [h["value"] for h in trend]
+        delta = (values[-1] - values[0]) / max(abs(values[0]), 1e-8)
+        return delta < threshold
