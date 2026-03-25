@@ -1,11 +1,9 @@
 {
-  "name": "exp2",
-  "params": {
-    "lr": 0.001
-  },
+  "name": "high-loss",
+  "params": {},
   "metrics": {
-    "accuracy": 0.92
+    "loss": 0.9
   },
-  "timestamp": "2026-03-25T14:02:55.618299",
+  "timestamp": "2026-03-25T14:06:34.181722",
   "id": 1
 }
