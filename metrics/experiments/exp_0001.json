@@ -1,0 +1,11 @@
+{
+  "name": "exp2",
+  "params": {
+    "lr": 0.001
+  },
+  "metrics": {
+    "accuracy": 0.92
+  },
+  "timestamp": "2026-03-25T14:02:55.618299",
+  "id": 1
+}
