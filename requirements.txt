@@ -1,21 +1,10 @@
-numpy>=1.24.0\npandas>=2.0.0\nscikit-learn>=1.3.0\nfastapi>=0.100.0\nuvicorn>=0.23.0\npydantic>=2.0.0\nstreamlit>=1.28.0\nplotly>=5.15.0\npytest>=7.4.0\nhttpx>=0.24.0\n'
-cat > .gitignore << 'EOF'
-__pycache__/\n*.pyc\n.venv/\nartifacts/\nmetrics/\nlogs/\n.env\n.DS_Store\n'
-cat > README.md << 'EOF'
-# MLOps Pipeline
-
-ML pipeline orchestration with experiment tracking, model registry, and data drift monitoring.
-
-## Features
-- Pipeline step orchestration
-- Model versioning and registry
-- Experiment tracking and comparison
-- Data drift detection
-- Performance degradation monitoring
-- REST API
-
-## Quick Start
-```bash
-pip install -r requirements.txt
-python -m pytest tests/ -v
-```
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+fastapi>=0.100.0
+uvicorn>=0.23.0
+pydantic>=2.0.0
+streamlit>=1.28.0
+plotly>=5.15.0
+pytest>=7.4.0
+httpx>=0.24.0
